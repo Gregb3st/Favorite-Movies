@@ -52,9 +52,6 @@ main_page_head = '''
             top: 0;
             background-color: white;
         }
-        row {
-        margin:0px;
-        }
         h6 {
         color:gray;
         align:left;
@@ -63,8 +60,23 @@ main_page_head = '''
         margin-left:5px;
         }
         td {
-            padding:5px;
+            padding:3px;
             vertical-align:top;
+        }
+        #posterImage {
+            padding-right: 0px;
+            height: 342;
+            padding-bottom :10px;
+        }
+        #detailsTable {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        #titleRow {
+            height: 96px;
+        }
+        #storylineRow {
+            height: 155px;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -133,14 +145,14 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <div class="row">
-        <h2 style="align:top">{movie_title}</h2>
+    <div id="titleRow" class="row">
+        <h2>{movie_title}</h2>
     </div>
     <div class="row">
-        <div id="posterImage" class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-               <img src="{poster_image_url}" style="max-width: 120%; max-height: 120%;">
+        <div id="posterImage" class="col-md-6 col-lg-6">
+               <img src="{poster_image_url}" style="max-width: 100%; max-height: 100%;">
         </div>
-        <div id="detailsTable" class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+        <div id="detailsTable" class="col-md-6 col-lg-6">
             <table style="margin-right:5px">
                 <tr>
                     <td style="color:gray">Year</td>
@@ -165,7 +177,7 @@ movie_tile_content = '''
             </table>  
         </div>
     </div>
-    <div class="row">
+    <div id="storylineRow" class="row">
         <h3>{movie_storyline}</h3>
     </div>
 </div>
