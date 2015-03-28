@@ -1,7 +1,12 @@
-import webbrowser
 import search_movie_details
 
-#This class makes all details of a single movie to be available to use
+"""This class makes all details of a single movie to be available to use
+It uses movie title provided to search for movie details in web using
+search_movie_details.py
+
+Args:
+    title(string): title of a movie
+"""
 
 class Movie():
 

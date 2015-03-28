@@ -1,6 +1,16 @@
 import webbrowser
 import os
 
+"""This file helps creating the webpage containing the movies and their details
+and opening the webpage in browser.
+
+Note:
+    Updated to handle properly all the additional information.
+
+Args:
+    movies(list): a list of movies (movie.py)
+"""
+
 # Styles and scripting for the page
 main_page_head = '''
 <head>
@@ -76,7 +86,7 @@ main_page_head = '''
             height: 96px;
         }
         #storylineRow {
-            height: 155px;
+            height: 190px;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
