@@ -23,7 +23,7 @@ class SearchMovieDetails:
 
         try:
             r = json.load(urllib2.urlopen(url))
-            print 'Movie details found for "' + self.entered_title + '"!'
+            #print 'Movie details found for "' + self.entered_title + '"!'
         except IOError:
             r = "No results found"
             print 'Failed accessing omdb api for "' + self.entered_title + '"!'
@@ -41,7 +41,7 @@ class SearchMovieDetails:
  
         try:
             r = json.load(urllib2.urlopen(url))
-            print "Movie Trailer ID found for " + self.entered_title + "!"
+            #print "Movie Trailer ID found for " + self.entered_title + "!"
         except IOError:
             r = "No results found!"
             print 'Failed accessing youtube api for "' + self.entered_title + '"!'
@@ -55,8 +55,8 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_trailer_json['items'][0]['id']['videoId']
-            #r = "https://www.youtube.com/watch?v=" + r #to do: update youtube id handling in fresh_tomatoes.py
-            print 'Successfully got Trailer ID for "' + self.entered_title + '"!'
+            #r = "https://www.youtube.com/watch?v=" + r #deprecated: changed youtube id handling in fresh_tomatoes.py
+            #print 'Successfully got Trailer ID for "' + self.entered_title + '"!'
         except:
             # r = "No results found"
             r = "PMKE-Tm0Bes" #No results found
@@ -68,7 +68,7 @@ class SearchMovieDetails:
     def get_year (self):
         try:
             r = self.movie_details_json['Year']
-            print 'Successfully got Year for "' + self.entered_title + '"!'
+            #print 'Successfully got Year for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Year not found for "' + self.entered_title + '"!'
@@ -80,7 +80,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Genre'].encode("ascii", "ignore")
-            print 'Successfully got Genre info for "' + self.entered_title + '"!'
+            #print 'Successfully got Genre info for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Genre info not found for "' + self.entered_title + '"!'
@@ -92,7 +92,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Plot'].encode("ascii", "ignore")
-            print 'Successfully got Plot for "' + self.entered_title + '"!'
+            #print 'Successfully got Plot for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Plot not found for "' + self.entered_title + '"!'
@@ -104,7 +104,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Actors'].encode("ascii", "ignore")
-            print 'Successfully got Actors for "' + self.entered_title + '"!'
+            #print 'Successfully got Actors for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Actors not found for "' + self.entered_title + '"!'
@@ -116,7 +116,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Awards'].encode("ascii", "ignore")
-            print 'Successfully got Awards for "' + self.entered_title + '"!'
+            #print 'Successfully got Awards for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Awards not found for "' + self.entered_title + '"!'
@@ -127,7 +127,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['imdbRating']
-            print 'Successfully got imdbRating for "' + self.entered_title + '"!'
+            #print 'Successfully got imdbRating for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'imdbRating not found for "' + self.entered_title + '"!'
@@ -138,7 +138,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['imdbVotes'].replace(","," ")
-            print 'Successfully got imdbVotes for "' + self.entered_title + '"!'
+            #print 'Successfully got imdbVotes for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'imdbVotes not found for "' + self.entered_title + '"!'
@@ -149,7 +149,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Title'].encode("ascii", "ignore")
-            print 'Successfully got Movie Title for "' + self.entered_title + '"!'
+            #print 'Successfully got Movie Title for "' + self.entered_title + '"!'
         except:
             r = 'No results found for: "' + self.entered_title + '". Check the title entered in Favourite_movies.txt'
             print '!!! No Movie With Such Title Found "' + self.entered_title + '"!!!'
@@ -161,7 +161,7 @@ class SearchMovieDetails:
         
         try:
             r = self.movie_details_json['Poster']
-            print 'Successfully got Poster for "' + self.entered_title + '"!'
+            #print 'Successfully got Poster for "' + self.entered_title + '"!'
         except:
             r = "No results found"
             print 'Poster not found for "' + self.entered_title + '"!'
